@@ -20,6 +20,7 @@ function sequelizeOptions(dbConfig) {
     host: dbConfig.host,
     port: dbConfig.port,
     dialect: dbConfig.dialect,
+    dialectOptions: dbConfig.dialectOptions,
     pool: dbConfig.pool,
     logging
   };

@@ -17,11 +17,11 @@ module.exports = {
     }
   },
   production: {
-    username: "vsdddvmfxyqshv",
-    password: "c6060286ab0c301cac545dec014b5211f64a9951b04dd6686d2955ce85674956",
-    database: "d3op51g68at5su",
-    host: "ec2-54-220-35-19.eu-west-1.compute.amazonaws.com",
-    port: "5432",
+    username: process.env.DATABASE_USERNAME,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE,
+    host: process.env.DATABASE_HOST,
+    port: process.env.DATABASE_PORT,
     dialect: "postgres",
     dialectOptions: {
       encrypt: true,
