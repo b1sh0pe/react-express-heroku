@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "db:migration:dev": "./node_modules/.bin/sequelize db:migrate --migrations-path ./sequelize/migrations --config ./sequelize/config.js --env development",
+    "db:migration:prod": "./node_modules/.bin/sequelize db:migrate --migrations-path ./sequelize/migrations --config ./sequelize/config.js --env production",
+    "db:revert:last:dev": "./node_modules/.bin/sequelize db:migrate:undo --migrations-path ./sequelize/migrations --config ./sequelize/config.js --env development",
+    "db:revert:last:prod": "./node_modules/.bin/sequelize db:migrate:undo --migrations-path ./sequelize/migrations --config ./sequelize/config.js --env production",
+    "db:revert:all:prod": "./node_modules/.bin/sequelize db:migrate:undo:all --migrations-path ./sequelize/migrations --config ./sequelize/config.js --env production",
+    "db:revert:all:dev": "./node_modules/.bin/sequelize db:migrate:undo:all --migrations-path ./sequelize/migrations --config ./sequelize/config.js --env development"
+  },
+  "dependencies": {
+    "axios": "0.19.2",
+    "cheerio": "^1.0.0-rc.6",
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "node-cron": "^3.0.0",
+    "pg": "^8.6.0",
+    "sequelize": "^6.6.2",
+    "sequelize-cli": "^6.2.0"
+  }
+}
