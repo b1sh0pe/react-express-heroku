@@ -25,6 +25,10 @@ module.exports = {
     dialect: "postgres",
     dialectOptions: {
       encrypt: true,
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      },
       requestTimeout: 600000// 10 min
     },
     pool: {
